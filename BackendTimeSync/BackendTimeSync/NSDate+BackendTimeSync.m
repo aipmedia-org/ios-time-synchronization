@@ -16,13 +16,13 @@ static NSTimeInterval interval;
     interval = [self timeIntervalBetweenClientAndServer];
     
     NSDate *deviceEventTime = [[NSDate alloc] initWithTimeInterval:-interval sinceDate:self];
-    NSLog(@"device event time %@", deviceEventTime);
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
-    df.timeZone = [NSTimeZone systemTimeZone];
-    NSString *deviceEventTimeString = [df stringFromDate:deviceEventTime];
-    NSLog(@"device event time string %@", deviceEventTimeString);
+//    NSLog(@"device event time %@", deviceEventTime);
+//    
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
+//    df.timeZone = [NSTimeZone systemTimeZone];
+//    NSString *deviceEventTimeString = [df stringFromDate:deviceEventTime];
+//    NSLog(@"device event time string %@", deviceEventTimeString);
     
     return deviceEventTime;
 }
@@ -30,14 +30,13 @@ static NSTimeInterval interval;
 - (NSDate *)serverEventTime
 {
     NSDate *serverEventTime = [[NSDate alloc] initWithTimeInterval:interval sinceDate:self];
-    //NSDate *serverEventTime = self;
-    NSLog(@"server event time %@", serverEventTime);
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
-    df.timeZone = [NSTimeZone systemTimeZone];
-    NSString *serverEventTimeString = [df stringFromDate:self];
-    NSLog(@"server event time string %@", serverEventTimeString);
+//    NSLog(@"server event time %@", serverEventTime);
+//    
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
+//    df.timeZone = [NSTimeZone systemTimeZone];
+//    NSString *serverEventTimeString = [df stringFromDate:self];
+//    NSLog(@"server event time string %@", serverEventTimeString);
 
     return serverEventTime;
 }
@@ -61,12 +60,12 @@ static NSTimeInterval interval;
         NSString *serverDateString = response.allHeaderFields[@"Date"];
         NSDate *serverDate = [df dateFromString:serverDateString];
         
-        NSLog(@"current date %@", currentDate);
-        NSLog(@"server date %@", serverDate);
+//        NSLog(@"current date %@", currentDate);
+//        NSLog(@"server date %@", serverDate);
         
         NSTimeInterval ti = [serverDate timeIntervalSinceDate:currentDate];
         ti = 100.0 * floorf(ti/100.0);
-        NSLog(@"interval %f", ti);
+//        NSLog(@"interval %f", ti);
         
         return ti;
     } else {
