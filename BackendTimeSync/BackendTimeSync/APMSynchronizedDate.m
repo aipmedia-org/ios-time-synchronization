@@ -93,4 +93,9 @@ static NSTimeInterval interval;
     return _serverDate;
 }
 
++ (NSTimeInterval)interval
+{
+    return interval;
+}
+
 @end

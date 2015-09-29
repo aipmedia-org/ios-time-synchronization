@@ -44,5 +44,9 @@
  * Returns server date
  */
 - (NSDate *)serverDate;
+/**
+ * Returns calculated interval
+ */
++ (NSTimeInterval)interval;
 
 @end

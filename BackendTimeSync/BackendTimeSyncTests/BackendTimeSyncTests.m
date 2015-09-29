@@ -31,6 +31,9 @@
     NSInteger month = 9;
     NSInteger day = 29;
     NSInteger year = 2015;
+    NSInteger serverHour = 10;
+    NSInteger deviceHour = 11;
+    NSTimeInterval expectedInterval = (serverHour - deviceHour) * 60 * 60;
 
     NSDateComponents *comp = [NSDateComponents new];
     [comp setMinute:minute];
@@ -41,40 +44,49 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.moiprofi.ru"]];
-    request.HTTPMethod = @"HEAD";
-    NSHTTPURLResponse *response;
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    NSString *serverDateString = response.allHeaderFields[@"Date"];
-    NSDate *serverDate = [df dateFromString:serverDateString];
     
-    //NSDate *serverDate = [NSDate date];
-
+    [comp setHour:serverHour];
+    NSDate *currentServerDate = [[NSCalendar currentCalendar] dateFromComponents:comp];
+    
+    [comp setHour:deviceHour];
+    NSDate *currentDeviceDate = [[NSCalendar currentCalendar] dateFromComponents:comp];
+    
+    [APMSynchronizedDate updateSynchronizationIntervalForCurrentServerDate:currentServerDate andCurrentDeviceDate:currentDeviceDate];
+    
+    NSInteger interval = [APMSynchronizedDate interval];
+    XCTAssertEqual(interval, expectedInterval);
+    
+    
+    
     NSString *eventDateString = @"Mon, 29 Sep 2015 15:00:00 GMT";
     NSDate *eventFromServerDate = [df dateFromString:eventDateString];
-
-    [comp setHour:18];
-    NSDate *expectedDeviceDate = [[NSCalendar currentCalendar] dateFromComponents:comp];
     
-    NSString *eventToServerDateString = @"Mon, 29 Sep 2015 16:00:00 GMT";
-    NSDate *expectedServerDate = [df dateFromString:eventToServerDateString];
-    
-    [comp setHour:19];
-    NSDate *eventToServerDate = [[NSCalendar currentCalendar] dateFromComponents:comp];
-
-    [APMSynchronizedDate setSynchronizationForServerDate:serverDate];
+    NSString *expectedDateString = @"Mon, 29 Sep 2015 16:00:00 GMT";
+    NSDate *expectedDeviceDate = [df dateFromString:expectedDateString];
     
     APMSynchronizedDate *syncFromServerDate = [APMSynchronizedDate synchronizedDateFromServerDate:eventFromServerDate];
     
-    NSDate *device = syncFromServerDate.deviceDate;
+    NSDate *calculatedDeviceDate = syncFromServerDate.deviceDate;
+    XCTAssertEqualWithAccuracy([calculatedDeviceDate timeIntervalSinceReferenceDate], [expectedDeviceDate timeIntervalSinceReferenceDate], 0.001);
+    
+    NSDate *calculatedServerDate = syncFromServerDate.serverDate;
+    XCTAssertEqualWithAccuracy([calculatedServerDate timeIntervalSinceReferenceDate], [eventFromServerDate timeIntervalSinceReferenceDate], 0.001);
 
-    XCTAssertEqualWithAccuracy([device timeIntervalSinceReferenceDate], [expectedDeviceDate timeIntervalSinceReferenceDate], 0.001);
+    
+    
+    [comp setHour:20];
+    NSDate *eventToServerDate = [[NSCalendar currentCalendar] dateFromComponents:comp];
+    
+    NSString *expectedServerDateString = @"Mon, 29 Sep 2015 16:00:00 GMT";
+    NSDate *expectedServerDate = [df dateFromString:expectedServerDateString];
     
     APMSynchronizedDate *syncToServerDate = [APMSynchronizedDate synchronizedDateFromDeviceDate:eventToServerDate];
     
-    NSDate *server = syncToServerDate.serverDate;
+    calculatedServerDate = syncToServerDate.serverDate;
+    XCTAssertEqualWithAccuracy([calculatedServerDate timeIntervalSinceReferenceDate], [expectedServerDate timeIntervalSinceReferenceDate], 0.001);
     
-    XCTAssertEqualWithAccuracy([server timeIntervalSinceReferenceDate], [expectedServerDate timeIntervalSinceReferenceDate], 0.001);
+    calculatedDeviceDate = syncToServerDate.deviceDate;
+    XCTAssertEqualWithAccuracy([calculatedDeviceDate timeIntervalSinceReferenceDate], [eventToServerDate timeIntervalSinceReferenceDate], 0.001);
 }
 
 @end
