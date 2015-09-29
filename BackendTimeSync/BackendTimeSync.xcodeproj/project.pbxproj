@@ -10,8 +10,8 @@
 		447E755B1BB9876E004652E5 /* BackendTimeSync.h in Headers */ = {isa = PBXBuildFile; fileRef = 447E755A1BB9876E004652E5 /* BackendTimeSync.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		447E75621BB9876E004652E5 /* BackendTimeSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447E75571BB9876E004652E5 /* BackendTimeSync.framework */; settings = {ASSET_TAGS = (); }; };
 		447E75671BB9876E004652E5 /* BackendTimeSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E75661BB9876E004652E5 /* BackendTimeSyncTests.m */; };
-		447E75731BB98787004652E5 /* NSDate+BackendTimeSync.h in Headers */ = {isa = PBXBuildFile; fileRef = 447E75711BB98787004652E5 /* NSDate+BackendTimeSync.h */; settings = {ASSET_TAGS = (); }; };
-		447E75741BB98787004652E5 /* NSDate+BackendTimeSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E75721BB98787004652E5 /* NSDate+BackendTimeSync.m */; settings = {ASSET_TAGS = (); }; };
+		447E75731BB98787004652E5 /* APMSynchronizedDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 447E75711BB98787004652E5 /* APMSynchronizedDate.h */; settings = {ASSET_TAGS = (); }; };
+		447E75741BB98787004652E5 /* APMSynchronizedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E75721BB98787004652E5 /* APMSynchronizedDate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,8 @@
 		447E75611BB9876E004652E5 /* BackendTimeSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackendTimeSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447E75661BB9876E004652E5 /* BackendTimeSyncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackendTimeSyncTests.m; sourceTree = "<group>"; };
 		447E75681BB9876E004652E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		447E75711BB98787004652E5 /* NSDate+BackendTimeSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BackendTimeSync.h"; sourceTree = "<group>"; };
-		447E75721BB98787004652E5 /* NSDate+BackendTimeSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BackendTimeSync.m"; sourceTree = "<group>"; };
+		447E75711BB98787004652E5 /* APMSynchronizedDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMSynchronizedDate.h; sourceTree = "<group>"; };
+		447E75721BB98787004652E5 /* APMSynchronizedDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMSynchronizedDate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				447E755A1BB9876E004652E5 /* BackendTimeSync.h */,
-				447E75711BB98787004652E5 /* NSDate+BackendTimeSync.h */,
-				447E75721BB98787004652E5 /* NSDate+BackendTimeSync.m */,
+				447E75711BB98787004652E5 /* APMSynchronizedDate.h */,
+				447E75721BB98787004652E5 /* APMSynchronizedDate.m */,
 				447E755C1BB9876E004652E5 /* Info.plist */,
 			);
 			path = BackendTimeSync;
@@ -99,7 +99,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				447E75731BB98787004652E5 /* NSDate+BackendTimeSync.h in Headers */,
+				447E75731BB98787004652E5 /* APMSynchronizedDate.h in Headers */,
 				447E755B1BB9876E004652E5 /* BackendTimeSync.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				447E75741BB98787004652E5 /* NSDate+BackendTimeSync.m in Sources */,
+				447E75741BB98787004652E5 /* APMSynchronizedDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

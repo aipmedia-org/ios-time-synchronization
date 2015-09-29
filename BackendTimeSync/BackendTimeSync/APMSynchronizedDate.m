@@ -3,14 +3,14 @@
 //  Helpers
 //
 //  Created by spens on 28/09/15.
-//  Copyright © 2015 ru.spens. All rights reserved.
+//  Copyright © 2015 A&P Media. All rights reserved.
 //
 
-#import "NSDate+BackendTimeSync.h"
+#import "APMSynchronizedDate.h"
 
 static NSTimeInterval interval;
 
-@implementation NSDate (BackendTimeSync)
+@implementation APMSynchronizedDate
 
 - (NSDate *)deviceEventTime {
     interval = [self timeIntervalBetweenClientAndServer];

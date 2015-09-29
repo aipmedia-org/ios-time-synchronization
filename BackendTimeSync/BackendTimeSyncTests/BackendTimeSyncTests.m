@@ -3,11 +3,11 @@
 //  BackendTimeSyncTests
 //
 //  Created by spens on 28/09/15.
-//  Copyright © 2015 ru.aipmedia. All rights reserved.
+//  Copyright © 2015 A&P Media. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "NSDate+BackendTimeSync.h"
+#import "BackendTimeSync.h"
 
 @interface BackendTimeSyncTests : XCTestCase
 
