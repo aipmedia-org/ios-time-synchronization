@@ -12,7 +12,7 @@ static NSTimeInterval interval;
 
 @implementation APMSynchronizedDate
 {
-    NSDate *_eventDate;
+    NSDate *_serverDate;
 }
 
 /**
@@ -21,7 +21,7 @@ static NSTimeInterval interval;
 - (instancetype)initWithServerDate:(NSDate *)serverDate
 {
     if (self = [super init]) {
-        _eventDate = serverDate;
+        _serverDate = serverDate;
     }
     return self;
 }
@@ -32,7 +32,7 @@ static NSTimeInterval interval;
 - (instancetype)initWithDeviceDate:(NSDate *)deviceDate
 {
     if (self = [super init]) {
-        _eventDate = deviceDate;
+
     }
     return self;
 }
@@ -55,13 +55,7 @@ static NSTimeInterval interval;
 + (void)setSynchronizationForServerDate:(NSDate *)serverDate
 {
     NSDate *current = [NSDate date];
-    interval = [serverDate timeIntervalSinceDate:current];
-    if ((int)interval == 0) {
-        interval = 0;
-    } else {
-        interval = 100.0 * floorf(interval/100.0);
-    }
-    NSLog(@"interval: %f", interval);
+    [APMSynchronizedDate setSynchronizationForServerDate:serverDate andDeviceDate:current];
 }
 
 /**
@@ -78,7 +72,7 @@ static NSTimeInterval interval;
  */
 + (APMSynchronizedDate *)synchronizedDateFromDeviceDate:(NSDate *)deviceDate
 {
-    APMSynchronizedDate *date = [[APMSynchronizedDate alloc] initWithServerDate:deviceDate];
+    APMSynchronizedDate *date = [[APMSynchronizedDate alloc] initWithDeviceDate:deviceDate];
     return date;
 }
 
@@ -87,7 +81,7 @@ static NSTimeInterval interval;
  */
 - (NSDate *)deviceDate
 {
-    NSDate *date = [[NSDate alloc] initWithTimeInterval:-interval sinceDate:_eventDate];
+    NSDate *date = [[NSDate alloc] initWithTimeInterval:-interval sinceDate:_serverDate];
     return date;
 }
 
@@ -96,8 +90,7 @@ static NSTimeInterval interval;
  */
 - (NSDate *)serverDate
 {
-    NSDate *date = [[NSDate alloc] initWithTimeInterval:interval sinceDate:_eventDate];
-    return date;
+    return _serverDate;
 }
 
 @end
