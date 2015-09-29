@@ -74,10 +74,10 @@
 
     
     
-    [comp setHour:20];
-    NSDate *eventToServerDate = [[NSCalendar currentCalendar] dateFromComponents:comp];
+    NSString *eventToServerDateString = @"Mon, 29 Sep 2015 20:00:00 GMT";
+    NSDate *eventToServerDate = [df dateFromString:eventToServerDateString];
     
-    NSString *expectedServerDateString = @"Mon, 29 Sep 2015 16:00:00 GMT";
+    NSString *expectedServerDateString = @"Mon, 29 Sep 2015 19:00:00 GMT";
     NSDate *expectedServerDate = [df dateFromString:expectedServerDateString];
     
     APMSynchronizedDate *syncToServerDate = [APMSynchronizedDate synchronizedDateFromDeviceDate:eventToServerDate];
