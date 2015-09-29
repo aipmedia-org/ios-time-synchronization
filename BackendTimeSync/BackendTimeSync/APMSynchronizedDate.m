@@ -32,7 +32,7 @@ static NSTimeInterval interval;
 - (instancetype)initWithDeviceDate:(NSDate *)deviceDate
 {
     if (self = [super init]) {
-
+        _serverDate = [[NSDate alloc] initWithTimeInterval:interval sinceDate:deviceDate];
     }
     return self;
 }
@@ -41,9 +41,9 @@ static NSTimeInterval interval;
  * Calculate synchronization interval between date on server and on device.
  * Save it statically.
  */
-+ (void)setSynchronizationForServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate
++ (void)updateSynchronizationIntervalForCurrentServerDate:(NSDate *)currentServerDate andCurrentDeviceDate:(NSDate *)currentDeviceDate
 {
-    interval = [serverDate timeIntervalSinceDate:deviceDate];
+    interval = [currentServerDate timeIntervalSinceDate:currentDeviceDate];
     if ((int)interval == 0) {
         interval = 0;
     } else {
@@ -52,10 +52,10 @@ static NSTimeInterval interval;
     NSLog(@"interval: %f", interval);
 }
 
-+ (void)setSynchronizationForServerDate:(NSDate *)serverDate
++ (void)updateSynchronizationIntervalForCurrentServerDate:(NSDate *)currentServerDate
 {
     NSDate *current = [NSDate date];
-    [APMSynchronizedDate setSynchronizationForServerDate:serverDate andDeviceDate:current];
+    [APMSynchronizedDate updateSynchronizationIntervalForCurrentServerDate:currentServerDate andCurrentDeviceDate:current];
 }
 
 /**

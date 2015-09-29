@@ -14,8 +14,8 @@
  * Calculate synchronization interval between date on server and on device.
  * Save it statically.
  */
-+ (void)setSynchronizationForServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate;
-+ (void)setSynchronizationForServerDate:(NSDate *)serverDate;
++ (void)updateSynchronizationIntervalForCurrentServerDate:(NSDate *)currentServerDate andCurrentDeviceDate:(NSDate *)currentDeviceDate;
++ (void)updateSynchronizationIntervalForCurrentServerDate:(NSDate *)currentServerDate;
 
 /**
  * Create synchronized date from server date
