@@ -1,6 +1,6 @@
 [![Version](http://cocoapod-badges.herokuapp.com/v/ios-time-synchronization/badge.png)]
 [![Platform](http://cocoapod-badges.herokuapp.com/p/ios-time-synchronization/badge.png)]
-[![License]((http://cocoapod-badges.herokuapp.com/l/ios-time-synchronization/badge.png)]
+[![License](http://cocoapod-badges.herokuapp.com/l/ios-time-synchronization/badge.png)]
 
 ## About this class
 
