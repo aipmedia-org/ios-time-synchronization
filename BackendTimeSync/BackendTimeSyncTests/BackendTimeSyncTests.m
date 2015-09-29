@@ -64,7 +64,7 @@
     
     [self updateSynchronization];
     
-    NSInteger interval = [APMSynchronizedDate intervalBetweenDates];
+    NSInteger interval = [APMSynchronizedDate intervalSinceServerDate];
     XCTAssertEqual(interval, expectedInterval);
 }
 
