@@ -1,5 +1,5 @@
 //
-//  NSDate+BackendTimeSync.m
+//  APMSynchronizedDate.m
 //  Helpers
 //
 //  Created by spens on 28/09/15.
@@ -41,7 +41,7 @@ static NSTimeInterval interval;
  * Calculate synchronization interval between date on server and on device.
  * Save it statically.
  */
-+ (void)setSynchronizationBetweenServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate
++ (void)setSynchronizationForServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate
 {
     interval = [serverDate timeIntervalSinceDate:deviceDate];
     if ((int)interval == 0) {
