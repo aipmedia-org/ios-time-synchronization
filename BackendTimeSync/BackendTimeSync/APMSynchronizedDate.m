@@ -54,7 +54,8 @@ static NSTimeInterval interval;
 
 + (void)setSynchronizationForServerDate:(NSDate *)serverDate
 {
-    interval = [serverDate timeIntervalSinceDate:[NSDate date]];
+    NSDate *current = [NSDate date];
+    interval = [serverDate timeIntervalSinceDate:current];
     if ((int)interval == 0) {
         interval = 0;
     } else {
