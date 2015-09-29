@@ -47,6 +47,6 @@
 /**
  * Returns calculated interval
  */
-+ (NSTimeInterval)interval;
++ (NSTimeInterval)intervalBetweenDates;
 
 @end

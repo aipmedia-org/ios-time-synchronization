@@ -8,7 +8,7 @@
 
 #import "APMSynchronizedDate.h"
 
-static NSTimeInterval interval;
+static NSTimeInterval intervalBetweenDates;
 
 @implementation APMSynchronizedDate
 {
@@ -32,7 +32,7 @@ static NSTimeInterval interval;
 - (instancetype)initWithDeviceDate:(NSDate *)deviceDate
 {
     if (self = [super init]) {
-        _serverDate = [[NSDate alloc] initWithTimeInterval:interval sinceDate:deviceDate];
+        _serverDate = [[NSDate alloc] initWithTimeInterval:intervalBetweenDates sinceDate:deviceDate];
     }
     return self;
 }
@@ -43,13 +43,12 @@ static NSTimeInterval interval;
  */
 + (void)updateSynchronizationIntervalForCurrentServerDate:(NSDate *)currentServerDate andCurrentDeviceDate:(NSDate *)currentDeviceDate
 {
-    interval = [currentServerDate timeIntervalSinceDate:currentDeviceDate];
-    if ((int)interval == 0) {
-        interval = 0;
+    intervalBetweenDates = [currentServerDate timeIntervalSinceDate:currentDeviceDate];
+    if ((int)intervalBetweenDates == 0) {
+        intervalBetweenDates = 0;
     } else {
-        interval = 100.0 * floorf(interval/100.0);
+        intervalBetweenDates = 100.0 * floorf(intervalBetweenDates/100.0);
     }
-    NSLog(@"interval: %f", interval);
 }
 
 + (void)updateSynchronizationIntervalForCurrentServerDate:(NSDate *)currentServerDate
@@ -81,7 +80,7 @@ static NSTimeInterval interval;
  */
 - (NSDate *)deviceDate
 {
-    NSDate *date = [[NSDate alloc] initWithTimeInterval:-interval sinceDate:_serverDate];
+    NSDate *date = [[NSDate alloc] initWithTimeInterval:-intervalBetweenDates sinceDate:_serverDate];
     return date;
 }
 
@@ -93,9 +92,9 @@ static NSTimeInterval interval;
     return _serverDate;
 }
 
-+ (NSTimeInterval)interval
++ (NSTimeInterval)intervalBetweenDates
 {
-    return interval;
+    return intervalBetweenDates;
 }
 
 @end
