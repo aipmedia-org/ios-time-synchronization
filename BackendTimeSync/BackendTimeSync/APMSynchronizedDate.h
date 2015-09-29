@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface APMSynchronizedDate
+@interface APMSynchronizedDate : NSDate
 
 /**
  * Calculate synchronization interval between date on server and on device.
  * Save it statically.
  */
- + (void)setSynchronizationBetweenServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate;
++ (void)setSynchronizationBetweenServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate;
++ (void)setSynchronizationForServerDate:(NSDate *)serverDate;
 
 /**
  * Create synchronized date from server date

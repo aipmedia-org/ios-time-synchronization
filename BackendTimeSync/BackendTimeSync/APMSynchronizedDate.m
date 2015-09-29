@@ -11,66 +11,92 @@
 static NSTimeInterval interval;
 
 @implementation APMSynchronizedDate
-
-- (NSDate *)deviceEventTime {
-    interval = [self timeIntervalBetweenClientAndServer];
-    
-    NSDate *deviceEventTime = [[NSDate alloc] initWithTimeInterval:-interval sinceDate:self];
-//    NSLog(@"device event time %@", deviceEventTime);
-//    
-//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
-//    df.timeZone = [NSTimeZone systemTimeZone];
-//    NSString *deviceEventTimeString = [df stringFromDate:deviceEventTime];
-//    NSLog(@"device event time string %@", deviceEventTimeString);
-    
-    return deviceEventTime;
+{
+    NSDate *_eventDate;
 }
 
-- (NSDate *)serverEventTime
+/**
+ * Initialize synchronized date from server date
+ */
+- (instancetype)initWithServerDate:(NSDate *)serverDate
 {
-    NSDate *serverEventTime = [[NSDate alloc] initWithTimeInterval:interval sinceDate:self];
-//    NSLog(@"server event time %@", serverEventTime);
-//    
-//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
-//    df.timeZone = [NSTimeZone systemTimeZone];
-//    NSString *serverEventTimeString = [df stringFromDate:self];
-//    NSLog(@"server event time string %@", serverEventTimeString);
-
-    return serverEventTime;
-}
-
-#pragma mark - Private
-
-- (NSTimeInterval)timeIntervalBetweenClientAndServer
-{
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.moiprofi.ru"]];
-    request.HTTPMethod = @"HEAD";
-    
-    NSHTTPURLResponse *response;
-    NSError *error;
-    
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (!error) {
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        df.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
-        
-        NSDate *currentDate = [NSDate date];
-        NSString *serverDateString = response.allHeaderFields[@"Date"];
-        NSDate *serverDate = [df dateFromString:serverDateString];
-        
-//        NSLog(@"current date %@", currentDate);
-//        NSLog(@"server date %@", serverDate);
-        
-        NSTimeInterval ti = [serverDate timeIntervalSinceDate:currentDate];
-        ti = 100.0 * floorf(ti/100.0);
-//        NSLog(@"interval %f", ti);
-        
-        return ti;
-    } else {
-        return 0;
+    if (self = [super init]) {
+        _eventDate = serverDate;
     }
+    return self;
+}
+
+/**
+ * Initialize synchronized date from device date
+ */
+- (instancetype)initWithDeviceDate:(NSDate *)deviceDate
+{
+    if (self = [super init]) {
+        _eventDate = deviceDate;
+    }
+    return self;
+}
+
+/**
+ * Calculate synchronization interval between date on server and on device.
+ * Save it statically.
+ */
++ (void)setSynchronizationBetweenServerDate:(NSDate *)serverDate andDeviceDate:(NSDate *)deviceDate
+{
+    interval = [serverDate timeIntervalSinceDate:deviceDate];
+    if ((int)interval == 0) {
+        interval = 0;
+    } else {
+        interval = 100.0 * floorf(interval/100.0);
+    }
+    NSLog(@"interval: %f", interval);
+}
+
++ (void)setSynchronizationForServerDate:(NSDate *)serverDate
+{
+    interval = [serverDate timeIntervalSinceDate:[NSDate date]];
+    if ((int)interval == 0) {
+        interval = 0;
+    } else {
+        interval = 100.0 * floorf(interval/100.0);
+    }
+    NSLog(@"interval: %f", interval);
+}
+
+/**
+ * Create synchronized date from server date
+ */
++ (APMSynchronizedDate *)synchronizedDateFromServerDate:(NSDate *)serverDate
+{
+    APMSynchronizedDate *date = [[APMSynchronizedDate alloc] initWithServerDate:serverDate];
+    return date;
+}
+
+/**
+ * Create synchronized date from device date
+ */
++ (APMSynchronizedDate *)synchronizedDateFromDeviceDate:(NSDate *)deviceDate
+{
+    APMSynchronizedDate *date = [[APMSynchronizedDate alloc] initWithServerDate:deviceDate];
+    return date;
+}
+
+/**
+ * Returns device date synchronized with server date
+ */
+- (NSDate *)deviceDate
+{
+    NSDate *date = [[NSDate alloc] initWithTimeInterval:-interval sinceDate:_eventDate];
+    return date;
+}
+
+/**
+ * Returns server date
+ */
+- (NSDate *)serverDate
+{
+    NSDate *date = [[NSDate alloc] initWithTimeInterval:interval sinceDate:_eventDate];
+    return date;
 }
 
 @end

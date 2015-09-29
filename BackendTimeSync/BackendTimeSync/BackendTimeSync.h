@@ -14,5 +14,3 @@ FOUNDATION_EXPORT double BackendTimeSyncVersionNumber;
 //! Project version string for BackendTimeSync.
 FOUNDATION_EXPORT const unsigned char BackendTimeSyncVersionString[];
 
-#import <BackendTimeSync/APMSynchronizedDate.h>
-
