@@ -4,12 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "iOS pod for time synchronization between iOS device and backend"
 
   s.description  = <<-DESC
-                   A longer description of ios-time-synchronization in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+		   NSDate subclass for time synchronization between iOS device and backend
                    DESC
 
   s.homepage     = "https://github.com/aipmedia-org/ios-time-synchronization"
