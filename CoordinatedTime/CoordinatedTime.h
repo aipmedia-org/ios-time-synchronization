@@ -16,7 +16,7 @@
 
 @interface CoordinatedTime : NSObject
 
-/** Calculate and saves time difference between device and server */
+/** Calculates and saves time difference between device and server */
 + (void)coordinateDeviceTime:(NSDate*)deviceDate withServerTime:(NSDate*)serverDate;
 
 /** Convinience method to calculate and save time difference between device and server's response */

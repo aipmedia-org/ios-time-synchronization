@@ -10,9 +10,6 @@
 
 static NSDateFormatter* sDateFormatter = nil;
 
-@interface CoordinatedTime ()
-@end
-
 @implementation CoordinatedTime
 {
     NSTimeInterval _originTimeInterval;
@@ -29,7 +26,8 @@ static NSDateFormatter* sDateFormatter = nil;
 + (void)coordinateDeviceTime:(NSDate*)deviceDate withServerResponse:(NSHTTPURLResponse*)response
 {
     NSString* serverDateString = response.allHeaderFields[@"Date"];
-    [self coordinateDeviceTime:deviceDate withServerTime:[[self dateFormatter] dateFromString:serverDateString]];
+    if (serverDateString.length > 0)
+        [self coordinateDeviceTime:deviceDate withServerTime:[[self dateFormatter] dateFromString:serverDateString]];
 }
 
 - (instancetype)initWithDeviceTime:(NSDate*)date
