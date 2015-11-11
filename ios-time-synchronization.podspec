@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author       = { "AiP Media" => "we@aipmedia.ru" }
   s.platform     = :ios
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/aipmedia-org/ios-time-synchronization.git", :commit => "0f654a4395bd1ecf88c4e5d14fd36bec29f680a1" }
+  s.source       = { :git => "https://github.com/aipmedia-org/ios-time-synchronization.git", :tag => "0.0.2" }
 
   s.source_files  = "CoordinatedTime", "CoordinatedTime/*.{h,m}"
   s.exclude_files = "CoordinatedTimeTests"
