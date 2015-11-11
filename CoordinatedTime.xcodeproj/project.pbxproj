@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A121CCC61BF33D8E00BD5835 /* CoordinatedTime.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A121CCC51BF33D8E00BD5835 /* CoordinatedTime.h */; };
+		A121CCC81BF33D8E00BD5835 /* CoordinatedTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A121CCC71BF33D8E00BD5835 /* CoordinatedTime.m */; };
+		A121CCF91BF33F1B00BD5835 /* CoordinatedTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A121CCF81BF33F1B00BD5835 /* CoordinatedTimeTests.m */; };
+		A121CCFB1BF33F1B00BD5835 /* libCoordinatedTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A121CCC21BF33D8E00BD5835 /* libCoordinatedTime.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A121CCFC1BF33F1B00BD5835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A121CCBA1BF33D8D00BD5835 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A121CCC11BF33D8E00BD5835;
+			remoteInfo = CoordinatedTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A121CCC01BF33D8E00BD5835 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				A121CCC61BF33D8E00BD5835 /* CoordinatedTime.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A121CCC21BF33D8E00BD5835 /* libCoordinatedTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoordinatedTime.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A121CCC51BF33D8E00BD5835 /* CoordinatedTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatedTime.h; sourceTree = "<group>"; };
+		A121CCC71BF33D8E00BD5835 /* CoordinatedTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatedTime.m; sourceTree = "<group>"; };
+		A121CCF61BF33F1B00BD5835 /* CoordinatedTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatedTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A121CCF81BF33F1B00BD5835 /* CoordinatedTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatedTimeTests.m; sourceTree = "<group>"; };
+		A121CCFA1BF33F1B00BD5835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A121CCBF1BF33D8E00BD5835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A121CCF31BF33F1B00BD5835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A121CCFB1BF33F1B00BD5835 /* libCoordinatedTime.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A121CCB91BF33D8D00BD5835 = {
+			isa = PBXGroup;
+			children = (
+				A121CCC41BF33D8E00BD5835 /* CoordinatedTime */,
+				A121CCF71BF33F1B00BD5835 /* CoordinatedTimeTests */,
+				A121CCC31BF33D8E00BD5835 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A121CCC31BF33D8E00BD5835 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A121CCC21BF33D8E00BD5835 /* libCoordinatedTime.a */,
+				A121CCF61BF33F1B00BD5835 /* CoordinatedTimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A121CCC41BF33D8E00BD5835 /* CoordinatedTime */ = {
+			isa = PBXGroup;
+			children = (
+				A121CCC51BF33D8E00BD5835 /* CoordinatedTime.h */,
+				A121CCC71BF33D8E00BD5835 /* CoordinatedTime.m */,
+			);
+			path = CoordinatedTime;
+			sourceTree = "<group>";
+		};
+		A121CCF71BF33F1B00BD5835 /* CoordinatedTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A121CCF81BF33F1B00BD5835 /* CoordinatedTimeTests.m */,
+				A121CCFA1BF33F1B00BD5835 /* Info.plist */,
+			);
+			path = CoordinatedTimeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A121CCC11BF33D8E00BD5835 /* CoordinatedTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A121CCCB1BF33D8E00BD5835 /* Build configuration list for PBXNativeTarget "CoordinatedTime" */;
+			buildPhases = (
+				A121CCBE1BF33D8E00BD5835 /* Sources */,
+				A121CCBF1BF33D8E00BD5835 /* Frameworks */,
+				A121CCC01BF33D8E00BD5835 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoordinatedTime;
+			productName = CoordinatedTime;
+			productReference = A121CCC21BF33D8E00BD5835 /* libCoordinatedTime.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A121CCF51BF33F1B00BD5835 /* CoordinatedTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A121CCFE1BF33F1B00BD5835 /* Build configuration list for PBXNativeTarget "CoordinatedTimeTests" */;
+			buildPhases = (
+				A121CCF21BF33F1B00BD5835 /* Sources */,
+				A121CCF31BF33F1B00BD5835 /* Frameworks */,
+				A121CCF41BF33F1B00BD5835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A121CCFD1BF33F1B00BD5835 /* PBXTargetDependency */,
+			);
+			name = CoordinatedTimeTests;
+			productName = CoordinatedTimeTests;
+			productReference = A121CCF61BF33F1B00BD5835 /* CoordinatedTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A121CCBA1BF33D8D00BD5835 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = aipmedia;
+				TargetAttributes = {
+					A121CCC11BF33D8E00BD5835 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					A121CCF51BF33F1B00BD5835 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = A121CCBD1BF33D8D00BD5835 /* Build configuration list for PBXProject "CoordinatedTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A121CCB91BF33D8D00BD5835;
+			productRefGroup = A121CCC31BF33D8E00BD5835 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A121CCC11BF33D8E00BD5835 /* CoordinatedTime */,
+				A121CCF51BF33F1B00BD5835 /* CoordinatedTimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A121CCF41BF33F1B00BD5835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A121CCBE1BF33D8E00BD5835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A121CCC81BF33D8E00BD5835 /* CoordinatedTime.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A121CCF21BF33F1B00BD5835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A121CCF91BF33F1B00BD5835 /* CoordinatedTimeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A121CCFD1BF33F1B00BD5835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A121CCC11BF33D8E00BD5835 /* CoordinatedTime */;
+			targetProxy = A121CCFC1BF33F1B00BD5835 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A121CCC91BF33D8E00BD5835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A121CCCA1BF33D8E00BD5835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A121CCCC1BF33D8E00BD5835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A121CCCD1BF33D8E00BD5835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A121CCFF1BF33F1B00BD5835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoordinatedTimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.aipmedia.CoordinatedTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A121CD001BF33F1B00BD5835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoordinatedTimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.aipmedia.CoordinatedTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A121CCBD1BF33D8D00BD5835 /* Build configuration list for PBXProject "CoordinatedTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A121CCC91BF33D8E00BD5835 /* Debug */,
+				A121CCCA1BF33D8E00BD5835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A121CCCB1BF33D8E00BD5835 /* Build configuration list for PBXNativeTarget "CoordinatedTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A121CCCC1BF33D8E00BD5835 /* Debug */,
+				A121CCCD1BF33D8E00BD5835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A121CCFE1BF33F1B00BD5835 /* Build configuration list for PBXNativeTarget "CoordinatedTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A121CCFF1BF33F1B00BD5835 /* Debug */,
+				A121CD001BF33F1B00BD5835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A121CCBA1BF33D8D00BD5835 /* Project object */;
+}
