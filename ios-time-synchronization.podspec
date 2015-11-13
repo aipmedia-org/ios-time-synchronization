@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ios-time-synchronization"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "iOS pod for time synchronization between iOS device and backend"
 
   s.description  = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author       = { "AiP Media" => "we@aipmedia.ru" }
   s.platform     = :ios
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/aipmedia-org/ios-time-synchronization.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/aipmedia-org/ios-time-synchronization.git", :tag => "0.0.3" }
 
   s.source_files  = "CoordinatedTime", "CoordinatedTime/*.{h,m}"
   s.exclude_files = "CoordinatedTimeTests"
