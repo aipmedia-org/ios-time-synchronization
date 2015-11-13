@@ -18,9 +18,12 @@ static NSDateFormatter* sDateFormatter = nil;
 
 + (void)coordinateDeviceTime:(NSDate*)deviceDate withServerTime:(NSDate*)serverDate
 {
-    NSTimeInterval deviceTimeInterval = [deviceDate timeIntervalSince1970];
-    NSTimeInterval serverTimeInterval = [serverDate timeIntervalSince1970];
-    [self setDifferenceTimeInterval:(deviceTimeInterval - serverTimeInterval)];
+    if (deviceDate != nil && serverDate != nil)
+    {
+        NSTimeInterval deviceTimeInterval = [deviceDate timeIntervalSince1970];
+        NSTimeInterval serverTimeInterval = [serverDate timeIntervalSince1970];
+        [self setDifferenceTimeInterval:(deviceTimeInterval - serverTimeInterval)];
+    }
 }
 
 + (void)coordinateDeviceTime:(NSDate*)deviceDate withServerResponse:(NSHTTPURLResponse*)response
@@ -72,6 +75,7 @@ static NSDateFormatter* sDateFormatter = nil;
     {
         sDateFormatter = [[NSDateFormatter alloc] init];
         sDateFormatter.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
+        sDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     }
     return sDateFormatter;
 }
